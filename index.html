@@ -4,26 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi-Pro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <script>
-            let targetElement = document.querySelector('.header')
 
-            fetch('navbar.html').then((res)=>{
-                return res.text()
-            }).then((html)=>{
-                targetElement.innerHTML = html
-            }).catch((error)=>{
-                console.log(error);
-            })
-        </script>
+    <nav class="nav">
+        <div id="logo">
+            skilled
+        </div>
+        <div id="btn-div">
+            <button id="get-started-btn">Get Started</button>
+        </div>
+    </nav>
+
+    <div class="landing-page">
+        <div class="intro-text">
+            <div>Maximize skill, <br> minimize budget</div>
+            <p>You are one click away to getting a professional of your choice, best of their category</p>
+
+            <input type="button" value="Get Started"/>
+        </div>
+
+        <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" alt="professional" width="40%"> 
 
     </div>
 
-    <div>
-        <h1>This is a test heading</h1>
+    <div class="form">
+        <form action="" method="">
+            <h2>Submit a request</h2><br>
+
+            <label for="">Email*</label><br>
+            <input type="email" placeholder="abc@gmail.com"/><br>
+
+            <label for="">Firstname*</label><br>
+            <input type="text" placeholder="John"/><br>
+            <label for="">Lastname*</label><br>
+            <input type="text" placeholder="Doe"/><br>
+            <label for="">Message*</label><br>
+            <input type="text" placeholder="Type your message..."/>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
+
 </body>
 </html>
