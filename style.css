@@ -90,8 +90,9 @@ form > input {
 
 form{
     padding:20px;
-    border: solid 1px grey;
+    border: solid 4px grey;
     border-radius: 10px;
+    outline: solid 5px red;
 }
 
 form >div {

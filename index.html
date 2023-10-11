@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi-Pro</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style type="text/css">
+        @import url("style.css");
+    </style>
 </head>
 <body>
 
@@ -16,7 +19,15 @@
             <button id="get-started-btn">Get Started</button>
         </div>
     </nav>
+    <div>
+        <form action="" class="name-form">
+            <input type="text" name="" id="" placeholder="Input a name" class="txtname">
+            <input type="submit" value="Add">
+            <input type="button" value="Delete" class = "btndelete">
+        </form>
 
+
+    </div>
     <div class="landing-page">
         <div class="intro-text">
             <div>Maximize skill, <br> minimize budget</div>
@@ -46,7 +57,22 @@
                 <input type="submit" value="Submit">
             </div>
         </form>
-    </div>
 
+    </div>
+    <details>
+        <summary>Epcot Center</summary>
+        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+    </details>
+
+    <label for="file">Downloading progress:</label>
+    <progress id="file" value="32" max="100"> 32% </progress>
+
+    <ul>
+        <li>User <bdi>hrefs</bdi>: 60 points</li>
+        <li>User <bdi>jdoe</bdi>: 80 points</li>
+        <li>User <bdi>إيان</bdi>: 90 points</li>
+    </ul>
+
+    <script src="main.js"></script>
 </body>
 </html>
