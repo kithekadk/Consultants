@@ -5,9 +5,10 @@
 }
 
 .nav{
-    position: relative;
+    display: flex;
     width: 100vw;
-    margin: 20px 40px;
+    margin-top: 20px;
+    justify-content: space-around;
 }
 body{
     color:rgb(2, 2, 82);
@@ -27,83 +28,90 @@ body{
     color: white;
 }
 
-#btn-div{
-    position:absolute;
-    right: 100px;
-    top: -8px
-}
-
-.intro-text{
-
-    width: 30vw;
-    padding-top: 50px;
-    float: left;
-}
-
-.intro-text > div{
-    font-size: 32px;
-    font-weight: bold;
-    margin-left: 40px;
-}
-
-.intro-text > p{
-    margin-left: 40px;
-    margin-top: 25px;
-}
-
-.intro-text > input{
-    margin-left: 40px;
-    margin-top: 30px;
-    border: none;
+#create-product{
     padding: 10px 20px;
+    border: none;
     border-radius: 25px;
-    background-image: linear-gradient(orange, rgb(207, 18, 176));
+    background-color: rgb(23, 139, 8);
     color: white;
+    cursor: pointer;
 }
 
-.landing-page{
-    position: relative;
-    width:100vw;
-    background-color: red;
-}
-
-img{
-    margin-top: 30px;
-    float: right;
-    margin-right: 100px;
-}
-
-
-.form{
-    margin-top: 43vh;
+.form-container{
     display: flex;
+    width: 100vw;
     justify-content: center;
-}
-
-form > label{
-    color: red;
-}
-
-form > input {
-    padding: 10px 10px
+    margin-top: 20px;
 }
 
 form{
-    padding:20px;
-    border: solid 4px grey;
+    width: 30vw;
+    padding: 20px;
+    /* background-color: rgb(223, 252, 198); */
     border-radius: 10px;
-    outline: solid 5px red;
+    box-shadow: 5px 5px 5px 5px grey;
 }
 
-form >div {
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
 
+.inputs > input{
+    padding: 5px 10px
+}
+.buttons{
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
-form > div > input{
-    padding: 10px 75px;
-    margin-top: 20px;
-    background-color: skyblue;
+
+.buttons > button{
+    padding: 10px 20px
+}
+
+button[type="submit"]{
+    background-color: rgb(0, 168, 235);
     border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
+    transition: padding 1s;
+}
+
+button[type="submit"]:hover{
+    background-color: rgb(1, 128, 179);
+    padding: 10px 30px
+}
+button[type="reset"]{
+    background-color: rgb(240, 40, 40);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.products{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product{
+    width: 20vw;
+    padding: 20px;
+}
+
+.product:hover{
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px grey;
+}
+
+.product-img{
+    width:100%;
 }

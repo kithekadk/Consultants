@@ -13,65 +13,47 @@
 
     <nav class="nav">
         <div id="logo">
-            skilled
+            Skilled
         </div>
         <div id="btn-div">
             <button id="get-started-btn">Get Started</button>
+            <button id="create-product">Create product</button>
         </div>
     </nav>
-    <div>
-        <form action="" class="name-form">
-            <input type="text" name="" id="" placeholder="Input a name" class="txtname">
-            <input type="submit" value="Add">
-            <input type="button" value="Delete" class = "btndelete">
-        </form>
 
-
-    </div>
-    <div class="landing-page">
-        <div class="intro-text">
-            <div>Maximize skill, <br> minimize budget</div>
-            <p>You are one click away to getting a professional of your choice, best of their category</p>
-
-            <input type="button" value="Get Started"/>
+    <div class="main">
+        <div class="form-container" style="display:none">
+            <form class="create-product-form">
+                <div class="inputs">
+                    <label for="">Product Name</label>
+                    <input type="text" class="product_name" placeholder="Input product name">
+                </div><br>
+                <div class="inputs">
+                    <label for="">Product description</label>
+                    <input type="text" class="product_description" placeholder="Input product description">
+                </div><br>
+                <div class="inputs">
+                    <label for="">Image</label>
+                    <input type="text" class="product_url" placeholder="Input image url">
+                </div><br>
+                <div class="inputs">
+                    <label for="">Price</label>
+                    <input type="number" class="product_price" placeholder="Input price">
+                </div><br>
+                <div class="buttons">
+                    <button type="submit">Create Product</button>
+                    <button type="reset">Cancel</button>
+                </div>
+            </form>
         </div>
 
-        <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" alt="professional" width="40%"> 
+        <div>
+            <div class="products">
 
-    </div>
-
-    <div class="form">
-        <form action="" method="">
-            <h2>Submit a request</h2><br>
-
-            <label for="">Email*</label><br>
-            <input type="email" placeholder="abc@gmail.com"/><br>
-
-            <label for="">Firstname*</label><br>
-            <input type="text" placeholder="John"/><br>
-            <label for="">Lastname*</label><br>
-            <input type="text" placeholder="Doe"/><br>
-            <label for="">Message*</label><br>
-            <input type="text" placeholder="Type your message..."/>
-            <div>
-                <input type="submit" value="Submit">
             </div>
-        </form>
-
+        </div>
     </div>
-    <details>
-        <summary>Epcot Center</summary>
-        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-    </details>
-
-    <label for="file">Downloading progress:</label>
-    <progress id="file" value="32" max="100"> 32% </progress>
-
-    <ul>
-        <li>User <bdi>hrefs</bdi>: 60 points</li>
-        <li>User <bdi>jdoe</bdi>: 80 points</li>
-        <li>User <bdi>إيان</bdi>: 90 points</li>
-    </ul>
+    
 
     <script src="main.js"></script>
 </body>

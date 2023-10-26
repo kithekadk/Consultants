@@ -1,82 +1,89 @@
-let person = {
-    name: "Augustus",
-    age: 22,
-    height : 5.6,
-    residence : "Karatina",
-    nationality: "Kenyan"
-}
+let createproducttoggle = document.getElementById('create-product')
+let form_container = document.querySelector('.form-container')
 
-person.name = "Victor"
-person.residence = "Githurai"
-
-person.weight = "70Kgs"
-
-// console.log(person);
-
-// let person2 = new Object()
-
-// person2.name = "Ambrose";
-// person2.age = 24
-
-// console.log(person.residence);
-// console.log(person['nationality']);
-
-let prop = "manufacture"
-
-let car = {
-    brand : "Audi",
-    color : "Black",
-    fuel : "Petrol",
-    consumption : "12KM/L",
-    model : "Saloon",
-    [prop] : 2022
-}
-
-delete car.model
-
-// console.log( car );
-
-for(key in car){
-    // console.log(key);
-}
-
-// console.log(car.brand == undefined);
-
-let newarray = Object.assign({}, person, car)
-
-// console.log(newarray);
-
-let firstname = "Daniel"
-let middlename = "hjgfsefge"
-
-let names = ["vic", "ruto", "augustus", "ambrose", "david"]
-
-let filterednames = names.filter((el)=>{
-   return  el.length > 4
+createproducttoggle.addEventListener('click', ()=>{
+    if(form_container.style.display == 'none'){
+        form_container.style.display =  'flex'
+    }else{
+        form_container.style.display = 'none'
+    }
 })
 
-console.log(filterednames);
+let product_name = document.querySelector('.product_name')
+let product_description = document.querySelector('.product_description')
+let product_url = document.querySelector('.product_url')
+let product_price = document.querySelector('.product_price')
+let create_product_form = document.querySelector('.create-product-form')
 
-let names_form = document.querySelector('.name-form')
-let newname = document.querySelector('.txtname')
+let productsArray = []
 
-let deletebtn = document.querySelector('.btndelete')
-
-deletebtn.addEventListener('click', ()=>{
-    // names.pop()
-    // names.shift()
-    names.splice(3, 6)
-    console.log(names);
-})
-
-names_form.addEventListener('submit', (e)=>{
+create_product_form.addEventListener('submit', (e)=>{
     e.preventDefault()
-    console.log(names);
-    
-    // names.push(newname.value)
-    names.unshift(newname.value)
 
-    newname.value = ""
+    let name = product_name.value.trim()
+    let desc = product_description.value.trim()
+    let image = product_url.value.trim()
+    let price = product_price.value.trim()
 
-    console.log(names);
+    let status = name != '' && desc != '' && image != '' && price != ''
+
+    let new_product = {
+        product_name: name,
+        description: desc,
+        image: image,
+        price: price
+    }
+
+    if(status){
+        productsArray.push(new_product)
+
+        console.log(productsArray);
+
+        product_name.value = ''
+        product_description.value = ''
+        product_url.value = ''
+        product_price.value = ''
+
+        displayProducts()
+    }
 })
+
+
+function displayProducts (){
+
+    let my_products = document.querySelectorAll('.products .product')
+
+    my_products.forEach(product =>{
+        product.remove()
+    })
+
+    productsArray.forEach((product, i)=>{
+        let one_product = document.createElement('div')
+        one_product.className = 'product'
+
+        let prod_name = document.createElement('h2')
+        prod_name.textContent = product.product_name
+        prod_name.className = 'product-name'
+
+        let prod_desc = document.createElement('p')
+        prod_desc.textContent = product.description
+        prod_desc.className = 'product-desc'
+
+        let prod_image = document.createElement('img')
+        prod_image.setAttribute('src', product.image)
+        prod_image.className = 'product-img'
+
+        let prod_price = document.createElement('h2')
+        prod_price.textContent = product.price
+        prod_price.className = 'product-name'
+
+        one_product.appendChild(prod_image) 
+        one_product.appendChild(prod_name) 
+        one_product.appendChild(prod_desc) 
+        one_product.appendChild(prod_price) 
+
+        let products = document.querySelector('.products')
+        products.appendChild(one_product)
+    })
+
+}
