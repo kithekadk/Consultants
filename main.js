@@ -57,7 +57,7 @@ function displayProducts (){
         product.remove()
     })
 
-    productsArray.forEach((product, i)=>{
+    productsArray.forEach((product, index)=>{
         let one_product = document.createElement('div')
         one_product.className = 'product'
 
@@ -74,13 +74,42 @@ function displayProducts (){
         prod_image.className = 'product-img'
 
         let prod_price = document.createElement('h2')
-        prod_price.textContent = product.price
+        prod_price.textContent = `Ksh ${product.price}`
         prod_price.className = 'product-name'
+
+        let deletebtn = document.createElement('button')
+        deletebtn.textContent = 'Delete'
+        deletebtn.className = 'deletebtn'
+        deletebtn.addEventListener('click', ()=>{
+            productsArray.splice(index, 1)
+            displayProducts()
+        })
+
+
+        let updatebtn = document.createElement('button')
+        updatebtn.textContent = 'Update'
+        updatebtn.className = 'updatebtn'
+        updatebtn.addEventListener('click', ()=>{
+            form_container.style.display =  'flex'
+
+            product_name.value = product.product_name
+            product_description.value = product.description
+            product_url.value = product.image
+            product_price.value = product.price
+
+            productsArray.splice(index, 1)
+            displayProducts()
+        })
+
+        let card_footer = document.createElement('div')
+        card_footer.appendChild(deletebtn)
+        card_footer.appendChild(updatebtn)
 
         one_product.appendChild(prod_image) 
         one_product.appendChild(prod_name) 
         one_product.appendChild(prod_desc) 
         one_product.appendChild(prod_price) 
+        one_product.appendChild(card_footer) 
 
         let products = document.querySelector('.products')
         products.appendChild(one_product)
